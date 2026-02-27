@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Alexandra Landing Animation
 
-## Getting Started
+A responsive landing page animation built with Next.js, Tailwind CSS, and GSAP.
 
-First, run the development server:
+## What this project does
+
+- Shows a cinematic hero entrance with image stagger, scaling, and text reveal.
+- Uses `GSAP.matchMedia()` to run different sizing logic for desktop and mobile.
+- Animates overlay masks and background cover for a smooth intro effect.
+
+## Tech stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- GSAP + `@gsap/react`
+
+## Run locally
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`http://localhost:3000`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+- `npm run dev` - Start development server
+- `npm run build` - Create production build
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-To learn more about Next.js, take a look at the following resources:
+## Project structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/page.tsx` - Main landing page UI + GSAP timeline
+- `app/layout.tsx` - Global layout and metadata
+- `app/globals.css` - Global styles
+- `public/` - Static image assets
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Animation flow (quick)
 
-## Deploy on Vercel
+1. Images enter from below with opacity fade-in.
+2. Gallery gap and image scale animate.
+3. Overlay masks slide to reveal images.
+4. Hero image resizes based on screen width.
+5. Dark overlay retracts and title text reveals.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- The page uses `<img>` elements intentionally for this animation setup.
+- If you want easier image optimization later, you can migrate to Next.js `Image` with layout adjustments.
